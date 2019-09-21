@@ -38,21 +38,16 @@ export default {
     },
     upload: function() {
       const axios = axiosBase.create({
-        baseURL: 'hogehoge',
+        baseURL: 'http://localhost:3000',
         headers: {
-          'Content-Type': 'application/json',
-          'X-Requested-With': 'XMLHttpRequest'
+          'Content-Type': 'multipart/form-data',
         },
-        responseType: 'json'
       });
-      axios
-          .get('/hogehoge')
-          .then(function(response){
-            console.log(response);
-          }
-          .catch(function(error){
-            console.log(error);
-          }))
+      const params = new FormData();
+      params.append('csv', this.uploadFile)
+      axios.post('/shift-scheduler', params).catch((err) => {
+        return err.response;
+      });
     },
   }
 };
