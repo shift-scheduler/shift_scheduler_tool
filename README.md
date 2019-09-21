@@ -1,5 +1,5 @@
 ### Architecture
-![architecture](/image/architecture.png)
+![architecture](https://github.com/shift-scheduler/shift_scheduler_tool/blob/develop/images/architecture.png)
 
 ### 起動
 
